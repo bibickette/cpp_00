@@ -6,14 +6,14 @@
 #    By: phwang <phwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/11 13:17:33 by phwang            #+#    #+#              #
-#    Updated: 2025/02/11 13:17:34 by phwang           ###   ########.fr        #
+#    Updated: 2025/02/11 13:40:53 by phwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = megaphone
 
 CC = c++
-CFLAGS = -Wall -Wextra -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC_DIR = ./
 OBJ_DIR = obj
@@ -37,7 +37,7 @@ all: $(NAME)
 
 $(OBJ_DIR)/%.o :  $(SRC_DIR)%.cpp
 	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 	@$(eval COMPILED_SRCS=$(shell echo $$(($(COMPILED_SRCS)+1))))
 	@echo -n "$(COLOR_BLUE)Compiling Objects megaphone $(COLOR_RESET)[$(COLOR_GREEN)"
