@@ -6,7 +6,7 @@
 /*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 14:02:42 by phwang            #+#    #+#             */
-/*   Updated: 2025/02/11 15:49:37 by phwang           ###   ########.fr       */
+/*   Updated: 2025/02/11 16:05:39 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,20 @@ using std::cout;
 using std::endl;
 using std::cin;
 
+std::string getUserInput() {
+    std::string str;
+    getline(cin, str);
+    if (cin.eof())
+    {
+        return("");
+    }
+    if(str.empty())
+    {
+        return("");
+    }
+    return(str);
+}
+
 int main(int argc, char **argv)
 {
     (void)argv;
@@ -39,13 +53,7 @@ int main(int argc, char **argv)
         do
         {
             cout << "Write a command : ADD, SEARCH or EXIT : ";
-            getline(cin, tamere); // est lequivalent de getnextline et va stocker dans tamere
-            if(cin.eof())
-            {
-                cout << endl 
-                     << "ctrl d fin du prog" << endl;
-                return(0);
-            }
+            tamere = getUserInput();
             cout << tamere;
         } while(tamere.empty()); // tant que je resepcte le while, je fais le do, tant que je suis remplie
     }
