@@ -6,7 +6,7 @@
 /*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 15:05:29 by phwang            #+#    #+#             */
-/*   Updated: 2025/02/11 15:33:41 by phwang           ###   ########.fr       */
+/*   Updated: 2025/02/12 17:55:57 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,13 @@ Contact::~Contact() {}
 
 // donc la on defini la fonction getfirstname quon a mis dans contact::
 // elle return la valeur de firstname
-std::string const Contact::getFirstName() const { return _firstName; }
+std::string const Contact::getInfo(int flag) const 
+{ 
+	if(flag == FIRST) {return _firstName; }
+	if(flag == LAST) { return _lastName; }
+	if(flag == NICKNAME) { return _nickName; }
+	if(flag == PHONE) { return _phoneNumber; }
+	if(flag == SECRET) { return _darkestSecret; }
+	return("");
+}
+

@@ -6,7 +6,7 @@
 /*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 14:02:42 by phwang            #+#    #+#             */
-/*   Updated: 2025/02/11 16:05:39 by phwang           ###   ########.fr       */
+/*   Updated: 2025/02/12 18:42:57 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,35 +27,35 @@ using std::cout;
 using std::endl;
 using std::cin;
 
-std::string getUserInput() {
-    std::string str;
-    getline(cin, str);
-    if (cin.eof())
-    {
-        return("");
-    }
-    if(str.empty())
-    {
-        return("");
-    }
-    return(str);
+void exiting()
+{
+	cout << "Exiting Phonebook" << endl;
+	exit(0);
+}
+
+void getUserInput(std::string *user_in)
+{
+	getline(cin, *user_in);
+	if (cin.eof()) { exiting(); }
 }
 
 int main(int argc, char **argv)
 {
     (void)argv;
-    if (argc != 1)
-    {
-        cout << "Phonebook take only 1 argument" << endl;
-    }
+    if (argc != 1) {
+    	cout << "\033[1;31mPhonebook take only 1 argument\033[0m" << endl; }
     else {
-        std::string tamere;
-        do
-        {
+		PhoneBook phonebook;
+        std::string user_in;
+		
+        while(1) {
             cout << "Write a command : ADD, SEARCH or EXIT : ";
-            tamere = getUserInput();
-            cout << tamere;
-        } while(tamere.empty()); // tant que je resepcte le while, je fais le do, tant que je suis remplie
-    }
+            getUserInput(&user_in);
+			if (user_in == "EXIT") { exiting(); }
+			else if(user_in == "ADD") { addTheContact(&phonebook); }
+			else if (user_in == "SEARCH") { searchContact(phonebook);}
+			else if (!user_in.empty()) { cout << "\033[1;31mInvalid command\033[0m" << endl; }
+		}
+	}
     return (0);
 }

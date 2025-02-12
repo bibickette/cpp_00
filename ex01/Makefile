@@ -6,7 +6,7 @@
 #    By: phwang <phwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/11 13:17:33 by phwang            #+#    #+#              #
-#    Updated: 2025/02/11 15:50:39 by phwang           ###   ########.fr        #
+#    Updated: 2025/02/12 18:44:27 by phwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,8 @@ SRC_DIR = src/
 OBJ_DIR = obj
 
 MANDATORY_SRCS = \
+	$(SRC_DIR)searchContact.cpp \
+	$(SRC_DIR)addTheContact.cpp \
 	$(SRC_DIR)PhoneBook.cpp \
 	$(SRC_DIR)Contact.cpp \
 	$(SRC_DIR)main.cpp
