@@ -6,7 +6,7 @@
 #    By: phwang <phwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/11 13:17:33 by phwang            #+#    #+#              #
-#    Updated: 2025/02/14 13:41:46 by phwang           ###   ########.fr        #
+#    Updated: 2025/02/14 13:57:30 by phwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,12 +19,15 @@ INCLUDE_DIR = include/
 SRC_DIR = src/
 OBJ_DIR = obj
 
-MANDATORY_SRCS = \
-	$(SRC_DIR)searchRepertoire.cpp \
-	$(SRC_DIR)addTheContact.cpp \
-	$(SRC_DIR)PhoneBook.cpp \
-	$(SRC_DIR)Contact.cpp \
-	$(SRC_DIR)main.cpp
+SRC_FILES = \
+		searchRepertoire.cpp \
+		addTheContact.cpp \
+		PhoneBook.cpp \
+		Contact.cpp \
+		main.cpp
+SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
+
+MANDATORY_SRCS = $(SRC)
 
 PMANDATORY =  $(addprefix , $(MANDATORY_SRCS))
 OBJS = $(PMANDATORY:$(SRC_DIR)%.cpp=$(OBJ_DIR)/%.o)
