@@ -6,7 +6,7 @@
 /*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 18:43:08 by phwang            #+#    #+#             */
-/*   Updated: 2025/02/12 18:43:45 by phwang           ###   ########.fr       */
+/*   Updated: 2025/02/14 13:51:55 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ using std::cin;
 static bool displayRepertoire(PhoneBook phonebook)
 {
 	Contact contact;
+	
 	cout << " ___________________________________ " << endl;
 	cout << "|  |          |          |          |" << endl;
 	cout << "|N.|FirstName | LastName | NickName |" << endl;
@@ -49,19 +50,43 @@ static void displayContact(Contact contact, int index)
 	cout << "|__|__________|__________|__________|__________|__________|" << endl;
 }
 
+static void getIndex(std::string *user_in)
+{
+	while (1) {		
+		cout << "Enter an index you want to see : ";
+		getUserInput(user_in);
+		if ((*user_in).empty()) {
+			cout << "\033[1;31mCannot be empty\033[0m" << endl;
+		}
+		else { /* check si c bien que des digits et bon chiffre */
+			bool is_digit = true;
+			for(size_t i = 0; (*user_in)[i]; i++) 
+			{
+				if(!isdigit((*user_in)[i])) {
+					cout << "\033[1;31mPlease enter only digits\033[0m" << endl;
+					is_digit = false ;
+					break;
+				}
+			}
+			if (is_digit) {
+				int index = atoi((*user_in).c_str()); 
+				/* (*user_in).c_str() = transforme la string en const char * */ 
+				if (index > 7 || index < 0 || (*user_in).size() > 2) {
+					cout << "\033[1;31mPlease enter an index between 0 and 7\033[0m" << endl;
+				}
+				else { break; }
+			}
+		}
+	}
+}
+
 void searchContact(PhoneBook phonebook) 
 {
 	if(!displayRepertoire(phonebook))
 		return ;
+		
 	std::string user_in;
-	cout << "Enter a contact you want to see : ";
-	while (1) {		
-		getUserInput(&user_in);
-		if(user_in.empty()){
-			cout << "\033[1;31mCannot be empty\033[0m" << endl;
-		}
-		else { break; }
-	}
+	getIndex(&user_in);
 	for(size_t i = 0; i < 8; i++)
 	{
 		if(phonebook.getContact(i).getInfo(FIRST) == user_in){
