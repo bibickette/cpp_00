@@ -6,7 +6,7 @@
 /*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 17:20:45 by phwang            #+#    #+#             */
-/*   Updated: 2025/02/12 18:05:02 by phwang           ###   ########.fr       */
+/*   Updated: 2025/02/15 12:59:52 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,8 +111,9 @@ void addTheContact(PhoneBook *phonebook)
 	nickname = getName(NICKNAME);
 	phone = getPhoneNumber();
 	secret = getDarkestSecret();
-	Contact new_contact(secret, phone, nickname, lastname, firstname);
+	// (firstname, lastname, nickname, phone, secret);
+	Contact new_contact(firstname, lastname, nickname, phone, secret);
 	phonebook->addContact(new_contact);
-	phonebook->addCuttedContact(Contact(cuttedInfo(secret), cuttedInfo(phone), cuttedInfo(nickname), cuttedInfo(lastname), cuttedInfo(firstname)));
+	phonebook->addCuttedContact(Contact(cuttedInfo(firstname), cuttedInfo(lastname), cuttedInfo(nickname), cuttedInfo(phone), cuttedInfo(secret)));
 	cout << "\033[1;32mContact successfully added !\033[0m" << endl;
 }

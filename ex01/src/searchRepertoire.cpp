@@ -6,7 +6,7 @@
 /*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 18:43:08 by phwang            #+#    #+#             */
-/*   Updated: 2025/02/14 13:51:55 by phwang           ###   ########.fr       */
+/*   Updated: 2025/02/15 13:07:29 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,22 @@ static bool displayRepertoire(PhoneBook phonebook)
 
 static void displayContact(Contact contact, int index)
 {
-	cout << " _________________________________________________________ " << endl;
-	cout << "|  |          |          |          |          |          |" << endl;
-	cout << "|N.|FirstName | LastName | NickName |  Phone   |  Secret  |" << endl;
-	cout << "|__|__________|__________|__________|__________|__________|" << endl;
-	cout << "|" << index << " |" << contact.getInfo(FIRST) << "|"
-		<< contact.getInfo(LAST) << "|" << contact.getInfo(NICKNAME) << "|"
-		<< contact.getInfo(PHONE) << "|" << contact.getInfo(SECRET) << "|" << endl;
-	cout << "|__|__________|__________|__________|__________|__________|" << endl;
+	// cout << " _________________________________________________________ " << endl;
+	// cout << "|  |          |          |          |          |          |" << endl;
+	// cout << "|N.|FirstName | LastName | NickName |  Phone   |  Secret  |" << endl;
+	// cout << "|__|__________|__________|__________|__________|__________|" << endl;
+	// cout << "|" << index << " |" << contact.getInfo(FIRST) << "|"
+	// 	<< contact.getInfo(LAST) << "|" << contact.getInfo(NICKNAME) << "|"
+	// 	<< contact.getInfo(PHONE) << "|" << contact.getInfo(SECRET) << "|" << endl;
+	// cout << "|__|__________|__________|__________|__________|__________|" << endl;
+	
+	cout << "Contact Index : " << index << endl;
+	cout << "Firstname : " << contact.getInfo(FIRST) << endl;
+	cout << "LastName : " << contact.getInfo(LAST) << endl;
+	cout << "Nickname : " << contact.getInfo(NICKNAME) << endl;
+	cout << "Phone : " << contact.getInfo(PHONE) << endl;
+	cout << "Darkest Secret : " << contact.getInfo(SECRET) << endl;
+
 }
 
 static void getIndex(std::string *user_in)
@@ -87,9 +95,9 @@ void searchContact(PhoneBook phonebook)
 		
 	std::string user_in;
 	getIndex(&user_in);
-	for(size_t i = 0; i < 8; i++)
+	for(int i = 0; i < 8; i++)
 	{
-		if(phonebook.getContact(i).getInfo(FIRST) == user_in){
+		if(i == atoi(user_in.c_str())){
 			return(displayContact(phonebook.getContact(i), i));
 		}
 	}

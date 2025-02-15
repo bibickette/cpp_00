@@ -6,7 +6,7 @@
 /*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 14:59:19 by phwang            #+#    #+#             */
-/*   Updated: 2025/02/12 17:21:27 by phwang           ###   ########.fr       */
+/*   Updated: 2025/02/15 12:57:47 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,7 @@ private:
     std::string _darkestSecret;
 public:
     Contact(); // constructeur par defaut
-	Contact(std::string darkestSecret,
-		std::string phoneNumber,
-		std::string nickName,
-		std::string lastName,
-    	std::string firstName);
+	Contact(std::string darkestSecret, std::string phoneNumber, std::string nickName, std::string lastName, std::string firstName);
     // constructeur egalement
     ~Contact();
 

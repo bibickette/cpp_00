@@ -6,25 +6,22 @@
 #    By: phwang <phwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/11 13:17:33 by phwang            #+#    #+#              #
-#    Updated: 2025/02/14 15:38:47 by phwang           ###   ########.fr        #
+#    Updated: 2025/02/14 15:39:08 by phwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = account
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -I$(INCLUDE_DIR)
+CFLAGS = -Wall -Wextra -std=c++98 -I$(INCLUDE_DIR)
 
 INCLUDE_DIR = include/
 SRC_DIR = src/
 OBJ_DIR = obj
 
 SRC_FILES = \
-		searchRepertoire.cpp \
-		addTheContact.cpp \
-		PhoneBook.cpp \
-		Contact.cpp \
-		main.cpp
+		Account.cpp \
+		tests.cpp
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 
 MANDATORY_SRCS = $(SRC)
@@ -38,8 +35,8 @@ TOTAL_SRCS := $(words $(MANDATORY_SRCS))
 COMPILED_SRCS := 0
 #COLOR SET
 COLOR_RESET = \e[0m
-COLOR_GREEN = \e[34m
-COLOR_BLUE = \e[34m
+COLOR_GREEN = \e[36m
+COLOR_BLUE = \e[36m
 
 
 all: $(NAME)
@@ -49,7 +46,7 @@ $(OBJ_DIR)/%.o :  $(SRC_DIR)%.cpp
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 	@$(eval COMPILED_SRCS=$(shell echo $$(($(COMPILED_SRCS)+1))))
-	@echo -n "$(COLOR_BLUE)Compiling Objects PhoneBook $(COLOR_RESET)[$(COLOR_GREEN)"
+	@echo -n "$(COLOR_BLUE)Compiling Objects account $(COLOR_RESET)[$(COLOR_GREEN)"
 	@for i in $(shell seq 1 25); do \
 		if [ $$i -le $$(($(COMPILED_SRCS)*25/$(TOTAL_SRCS))) ]; then \
 			echo -n "♣"; \
@@ -60,17 +57,17 @@ $(OBJ_DIR)/%.o :  $(SRC_DIR)%.cpp
 	@echo -n "$(COLOR_RESET)] $(COMPILED_SRCS)/$(TOTAL_SRCS)\r"
 
 $(NAME) : $(OBJS)
-	@echo "$(COLOR_BLUE)\nCompiling PhoneBook...$(COLOR_RESET)"
+	@echo "$(COLOR_BLUE)\nCompiling account...$(COLOR_RESET)"
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) 
-	@echo "$(COLOR_GREEN)PhoneBook Compilation complete !$(COLOR_RESET)        "
+	@echo "$(COLOR_GREEN)account Compilation complete !$(COLOR_RESET)        "
 
 clean:
 	@rm -rf $(OBJ_DIR)
 
 fclean: clean
-	@echo "$(COLOR_BLUE)✘✘✘ Deleting PhoneBook... ✘✘✘$(COLOR_RESET)"
+	@echo "$(COLOR_BLUE)✘✘✘ Deleting account... ✘✘✘$(COLOR_RESET)"
 	@rm -f $(NAME)
-	@echo "$(COLOR_GREEN)✘✘✘ PhoneBook fcleaned ! ✘✘✘$(COLOR_RESET)        "
+	@echo "$(COLOR_GREEN)✘✘✘ account fcleaned ! ✘✘✘$(COLOR_RESET)        "
 
 re: fclean all
 
