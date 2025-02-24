@@ -6,14 +6,14 @@
 #    By: phwang <phwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/11 13:17:33 by phwang            #+#    #+#              #
-#    Updated: 2025/02/14 15:39:08 by phwang           ###   ########.fr        #
+#    Updated: 2025/02/24 21:38:08 by phwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = account
 
 CC = c++
-CFLAGS = -Wall -Wextra -std=c++98 -I$(INCLUDE_DIR)
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -I$(INCLUDE_DIR)
 
 INCLUDE_DIR = include/
 SRC_DIR = src/
