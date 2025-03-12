@@ -6,7 +6,7 @@
 /*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 17:20:45 by phwang            #+#    #+#             */
-/*   Updated: 2025/02/15 12:59:52 by phwang           ###   ########.fr       */
+/*   Updated: 2025/03/12 15:15:21 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,9 @@ std::string cuttedInfo(std::string to_cut)
 		cutted.resize(10);
 		cutted[9] = '.';
 	}
-	if (to_cut.size() < 10) {
-		cutted.resize(10, ' ');
-	}
+	// if (to_cut.size() < 10) {
+	// 	cutted.resize(10, ' ');
+	// }
 	return(cutted);
 }
 

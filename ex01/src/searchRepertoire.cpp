@@ -6,7 +6,7 @@
 /*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 18:43:08 by phwang            #+#    #+#             */
-/*   Updated: 2025/03/12 11:23:04 by phwang           ###   ########.fr       */
+/*   Updated: 2025/03/12 15:17:38 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,16 @@ static bool displayRepertoire(PhoneBook phonebook)
 			return (false);
 		}
 		else if (contact.getInfo(FIRST).empty()) { break; }
-		cout << "|" << i << " |" << contact.getInfo(FIRST) << "|"
-			<< contact.getInfo(LAST) << "|" << contact.getInfo(NICKNAME) << "|" << endl;
+		cout << "|" << i << " |";
+		for(int i = 0; (10 - (contact.getInfo(FIRST).size() + i)) > 0; i++)
+		{ cout << " "; }
+		cout << contact.getInfo(FIRST) << "|";
+		for(int i = 0; (10 - (contact.getInfo(LAST).size() + i)) > 0; i++)
+		{ cout << " "; }  
+		cout << contact.getInfo(LAST) << "|";
+		for(int i = 0; (10 - (contact.getInfo(NICKNAME).size() + i)) > 0; i++)
+		{ cout << " "; }
+		cout << contact.getInfo(NICKNAME) << "|" << endl;
 	}
 	cout << "|__|__________|__________|__________|" << endl;
 	return(true);
