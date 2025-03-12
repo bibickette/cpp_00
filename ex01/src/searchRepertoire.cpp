@@ -6,7 +6,7 @@
 /*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 18:43:08 by phwang            #+#    #+#             */
-/*   Updated: 2025/02/15 13:07:29 by phwang           ###   ########.fr       */
+/*   Updated: 2025/03/12 11:23:04 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,9 +97,11 @@ void searchContact(PhoneBook phonebook)
 	getIndex(&user_in);
 	for(int i = 0; i < 8; i++)
 	{
-		if(i == atoi(user_in.c_str())){
+		if(i == atoi(user_in.c_str()) && !phonebook.getContact(i).getInfo(FIRST).empty() ){
 			return(displayContact(phonebook.getContact(i), i));
 		}
+		else if (i == atoi(user_in.c_str()) && phonebook.getContact(i).getInfo(FIRST).empty())
+		{ break; }
 	}
 	cout << "\033[1;31mCannot find the contact\033[0m" << endl;
 }

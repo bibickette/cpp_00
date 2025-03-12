@@ -6,7 +6,7 @@
 /*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 11:39:46 by phwang            #+#    #+#             */
-/*   Updated: 2025/02/12 17:21:33 by phwang           ###   ########.fr       */
+/*   Updated: 2025/03/12 11:15:53 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,14 @@ int main(int argc, char **argv)
         std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
     else
     {
-        for (size_t i = 1; argv[i]; i++)
+        for (int i = 1; argv[i]; i++)
         {
-            for (size_t j = 0; argv[i][j]; j++)
+            for (int j = 0; argv[i][j]; j++)
             {
                 std::cout << (char)toupper(argv[i][j]);
             }
+            if(!(i == (argc - 1)))
+            { std::cout << " "; }
         }
     }
     // std::cout << std::flush ; // ca sert a vider le buffer
