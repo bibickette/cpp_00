@@ -3,7 +3,8 @@
 # Project presentation - `cpp_00`
 ## **Description**
 
-This project is an introduction to **C++**.  For this reason, the learning process starts slowly.
+This project is an introduction to **C++**.
+For this reason, the learning process starts slowly.
 
 In this first set of exercises, we discover the basic syntax of C++, including namespaces, classes, member functions, and several fundamental concepts of object-oriented programming.
 
