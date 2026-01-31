@@ -6,14 +6,14 @@
 #    By: phwang <phwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/11 13:17:33 by phwang            #+#    #+#              #
-#    Updated: 2025/03/15 12:17:04 by phwang           ###   ########.fr        #
+#    Updated: 2026/01/31 13:45:41 by phwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = megaphone
 
-CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC_DIR = ./
 OBJ_DIR = obj
@@ -37,7 +37,7 @@ all: $(NAME)
 
 $(OBJ_DIR)/%.o :  $(SRC_DIR)%.cpp
 	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 	@$(eval COMPILED_SRCS=$(shell echo $$(($(COMPILED_SRCS)+1))))
 	@echo -n "$(COLOR_BLUE)Compiling Objects $(NAME) $(COLOR_RESET)[$(COLOR_GREEN)"
@@ -52,7 +52,7 @@ $(OBJ_DIR)/%.o :  $(SRC_DIR)%.cpp
 
 $(NAME) : $(OBJS)
 	@echo "$(COLOR_BLUE)\nCompiling $(NAME)...$(COLOR_RESET)"
-	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) 
+	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME) 
 	@echo "$(COLOR_GREEN)$(NAME) Compilation complete !$(COLOR_RESET)        "
 
 clean:

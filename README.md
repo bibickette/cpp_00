@@ -21,12 +21,12 @@ In this first set of exercises, we discover the basic syntax of C++, including n
 * * *
 ## Exercices Overview
 
-**ex00. Megaphone**
+### **ex00. Megaphone**
 
 Create a program that takes arguments and prints them back to the terminal in capital letters.
 If no arguments are provided the program will print out a default message, also in captial letters.
 
-**ex01. My Awesome PhoneBook**
+### **ex01. My Awesome PhoneBook**
 
 Simulate a phonebook using a **terminal interactive interface**.
 
@@ -38,7 +38,7 @@ Available commands:
 The phonebook can store up to **8 contacts**.  
 When a 9th contact is added, it replaces the oldest one, and so on.
 
-**ex02. The Job Of Your Dreams**
+### **ex02. The Job Of Your Dreams**
 
 Three files are provided:
 - `tests.cpp`
@@ -51,7 +51,9 @@ The implementation must reproduce the exact output of `19920104_091532.log` when
 
 To verify the output, you can compare the two files using the `diff` command.
 
-### Compilation rules
+* * *
+
+## Compilation rules
 
 All exercises are compiled using the following flags :
 - `-Wall`

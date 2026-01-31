@@ -1,9 +1,9 @@
 🇬🇧 English version available [here](README.md)
 * * *
- Présentation du projet `cpp_00`
+# Présentation du projet `cpp_00`
 ## Description
 
-Ce projet est une introduction au **C++**.
+Ce projet est une introduction au **C++**.  
 Pour cette raison, le processus d’apprentissage commence progressivement.
 
 Dans cette première série d’exercices, nous découvrons la syntaxe de base du C++, notamment les espaces de noms, les classes, les fonctions membres, ainsi que plusieurs concepts fondamentaux de la programmation orientée objet.
@@ -21,12 +21,12 @@ Dans cette première série d’exercices, nous découvrons la syntaxe de base d
 * * *
 ## Aperçu des exercices
 
-**ex00 – Megaphone**
+### **ex00 – Megaphone**
 
 Créer un programme qui prend des arguments en ligne de commande et les affiche dans le terminal en **lettres capitales**.  
 Si aucun argument n’est fourni, le programme affiche un message par défaut, également en lettres capitales.
 
-**ex01 – My Awesome PhoneBook**
+### **ex01 – My Awesome PhoneBook**
 
 Simuler un annuaire téléphonique à l’aide d’une **interface interactive dans le terminal**.
 
@@ -38,7 +38,7 @@ Commandes disponibles :
 Le répertoire peut contenir jusqu’à **8 contacts**.  
 Lorsqu’un 9ᵉ contact est ajouté, il remplace le plus ancien, et ainsi de suite.
 
-**ex02 – The Job Of Your Dreams**
+### **ex02 – The Job Of Your Dreams**
 
 Trois fichiers sont fournis :
 - `tests.cpp`
@@ -51,7 +51,9 @@ L’implémentation doit reproduire exactement la sortie du fichier `19920104_09
 
 Pour vérifier la sortie du programme, vous pouvez comparer les deux fichiers à l’aide de la commande `diff`.
 
-### Règles de compilation
+* * *
+
+## Règles de compilation
 
 Tous les exercices sont compilés avec les flags suivants :
 - `-Wall`
