@@ -48,9 +48,11 @@ The goal is to implement the `Account` class by creating the `Account.cpp` file 
 
 The implementation must reproduce the exact output of `19920104_091532.log` when running the provided main function in `tests.cpp` (timestamps may differ).
 
+To verify the output, you can compare the two files using the `diff` command.
+
 ### Compilation rules
 
-All modules are compiled using the following flags :
+All exercises are compiled using the following flags :
 - `-Wall`
 - `-Wextra`
 - `-Werror`
@@ -66,7 +68,7 @@ All modules are compiled using the following flags :
 1. Clone `cpp_00` in a folder first  : `git clone git@github.com:bibickette/cpp_00.git`
 2. Move into the repository : `cd cpp_00`
 3. Compile the module : `make`; this will compile all exercises contained in the module
-4. You can now move into each exercices and launch their own executables
+4. You can now move into each exercices and run the corresponding executable
 
 * * *
 *Project validation date : March 12, 2025*
