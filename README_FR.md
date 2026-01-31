@@ -76,4 +76,4 @@ Tous les exercices sont compilés avec les flags suivants :
 
 * * *
 
-*Date de validation du projet : 12 mars - 3 avril, 2025*
+*Date de validation du projet : 12 mars 2025*
