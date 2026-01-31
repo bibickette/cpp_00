@@ -3,7 +3,7 @@
  Présentation du projet `cpp_00`
 ## Description
 
-Ce projet est une introduction au **C++**.  
+Ce projet est une introduction au **C++**.
 Pour cette raison, le processus d’apprentissage commence progressivement.
 
 Dans cette première série d’exercices, nous découvrons la syntaxe de base du C++, notamment les espaces de noms, les classes, les fonctions membres, ainsi que plusieurs concepts fondamentaux de la programmation orientée objet.
