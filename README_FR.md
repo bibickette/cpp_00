@@ -17,6 +17,15 @@ Dans cette première série d’exercices, nous découvrons la syntaxe de base d
 **Technologies**
 - Makefile
 
+* * *
+## Concepts clés
+
+- Syntaxe de base du C++
+- Espaces de noms (namespaces)
+- Classes et fonctions membres
+- Constructeurs et destructeurs
+- std::iostream
+- Bases de l’entrée/sortie
 
 * * *
 ## Aperçu des exercices

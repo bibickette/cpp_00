@@ -19,6 +19,16 @@ In this first set of exercises, we discover the basic syntax of C++, including n
 - Makefile
 
 * * *
+## Key Concepts
+
+- Basic syntax of C++
+- Namespaces
+- Classes and member functions
+- Constructors and destructors
+- std::iostream
+- Input/output basics
+
+* * *
 ## Exercices Overview
 
 ### **ex00. Megaphone**
